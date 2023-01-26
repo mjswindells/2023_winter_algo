@@ -34,6 +34,7 @@ public class TRIANGLEPATH {
 		System.out.println(max);
 		
 		
+        
 	}
 
 }
