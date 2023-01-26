@@ -8,7 +8,7 @@ public class boj1463 {
 		Scanner scan=new Scanner(System.in);
 		int in=scan.nextInt();
 		
-		int [] dp=new int[in+1];
+		int [] dp=new int[in+2];
 		
 		dp[1]=0;
 		dp[2]=1;
@@ -16,10 +16,10 @@ public class boj1463 {
 		for(int i=4; i<=in; i++) {
             dp[i] = dp[i-1] + 1; 
 
-            if(i%3 == 0) {
+            if(i%3==0) {
                 dp[i] = Math.min(dp[i], dp[i / 3] + 1); 
             }
-            if (i % 2 == 0) {
+            if (i%2==0) {
                 dp[i] = Math.min(dp[i], dp[i / 2] + 1); 
             }
         }
