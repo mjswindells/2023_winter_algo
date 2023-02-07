@@ -36,6 +36,7 @@ public class boj1256 {
     } 
 
 	public static long com(int n,int k){
+        // 잘료형으로 인해 초과한 범위에 대해서는 예외처리를 해주었다
         if(dp[n][k]>=1000000001 || dp[n][k]<-1){
             return dp[n][k]=1000000001;
             
