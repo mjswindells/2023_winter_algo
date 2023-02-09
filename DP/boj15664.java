@@ -6,6 +6,7 @@ import java.util.*;
 public class boj15664 {
 
     public static int N, M;
+    public static boolean[] isUsed = new boolean[100];
     public static LinkedList<Integer> arr = new LinkedList<Integer>();
     public static ArrayList<Integer> array = new ArrayList<Integer>();
     public static LinkedHashSet<String> set = new LinkedHashSet<>();
@@ -42,9 +43,12 @@ public class boj15664 {
             set.add(sb.toString());
         } else {
             for (int i = idx; i < N; i++) {
-                if (arr.getLast() <= array.get(i)) {
+                // 같은 수가 여러개 있으니 boolean 사용 , 증가 수열
+                if((!isUsed[i]) && (arr.getLast() <= array.get(i))){
+                    isUsed[i] = true;
                     arr.add(array.get(i));
                     NM(m + 1, idx + 1);
+                    isUsed[i] = false;
                     arr.remove(arr.size() - 1);
                 }
             }
